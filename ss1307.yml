@@ -1,0 +1,101 @@
+openapi: 3.0.1
+info:
+  title: Air Pollution API
+  description: Air Pollution API
+  version: '0.1'
+servers:
+  - url: 'http://api.openweathermap.org'
+paths:
+  /data/2.5/air_pollution:
+    get:
+      description: Air Pollution API Spec
+      parameters:
+        - name: appid
+          in: query
+          schema:
+            type: string
+          example: d59c9714a57accd441ec8644d433dbb6
+        - name: lon
+          in: query
+          schema:
+            type: string
+          example: '50'
+        - name: lat
+          in: query
+          schema:
+            type: string
+          example: '50'
+      responses:
+        '200':
+          description: Air Pollution API Spec
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+              examples: {}
+      servers:
+        - url: 'http://api.openweathermap.org'
+    servers:
+      - url: 'http://api.openweathermap.org'
+  /data/2.5/air_pollution/forecast:
+    get:
+      description: Air Pollution API Spec
+      parameters:
+        - name: appid
+          in: query
+          schema:
+            type: string
+          example: d59c9714a57accd441ec8644d433dbb6
+        - name: lon
+          in: query
+          schema:
+            type: string
+          example: '50'
+        - name: lat
+          in: query
+          schema:
+            type: string
+          example: '50'
+      responses:
+        '200':
+          description: Air Pollution API Spec
+      servers:
+        - url: 'http://api.openweathermap.org'
+    servers:
+      - url: 'http://api.openweathermap.org'
+  /data/2.5/air_pollution/history:
+    get:
+      description: Air Pollution API Spec
+      parameters:
+        - name: appid
+          in: query
+          schema:
+            type: string
+          example: d59c9714a57accd441ec8644d433dbb6
+        - name: start
+          in: query
+          schema:
+            type: string
+          example: '1606223802'
+        - name: lon
+          in: query
+          schema:
+            type: string
+          example: '50'
+        - name: end
+          in: query
+          schema:
+            type: string
+          example: '1606482999'
+        - name: lat
+          in: query
+          schema:
+            type: string
+          example: '50'
+      responses:
+        '200':
+          description: Air Pollution API Spec
+      servers:
+        - url: 'http://api.openweathermap.org'
+    servers:
+      - url: 'http://api.openweathermap.org'
